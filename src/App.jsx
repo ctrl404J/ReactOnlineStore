@@ -3,13 +3,12 @@ import './App.css'
 import {Navbar, Container, Nav} from 'react-bootstrap';
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  
   return (
     <div className='App'>
-      <Navbar bg="light" data-bs-theme="light">
+      <Navbar bg="dark" data-bs-theme="dark">
         <Container>
-          <Navbar.Brand href="#home">StyleShop</Navbar.Brand>
+          <Navbar.Brand href="#home">WOWShop</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">New</Nav.Link>
@@ -17,6 +16,16 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
+      <div className='main-bg'></div>
+      <div>
+        <ul className='item-Container'>
+          <li className='shop-item'>
+            <img src='/c1.png' alt="상품 이미지"/>
+            <h4>상품명</h4>
+            <div>상품설명</div>
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }
