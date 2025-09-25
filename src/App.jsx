@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import {Navbar, Container, Nav} from 'react-bootstrap';
+import data from './data.jsx';
 
 function App() {
   
