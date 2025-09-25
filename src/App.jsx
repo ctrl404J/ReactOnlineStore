@@ -6,7 +6,7 @@ import data from './data.jsx';
 function App() {
   let [itemData, setData] = useState(data);
   let copy = [...itemData];
-  
+
   return (
     <div className='App'>
       <Navbar bg="dark" data-bs-theme="dark">
@@ -23,14 +23,9 @@ function App() {
       <div>
         <ul className='item-container'>
           {
-            copy.map(function(param, i){
+            copy.map(function(item, i){
               return(
-                <li className='shop-item' key={i}>
-                  <img src={data[i].imageUrl} alt='No Image'></img>
-                  <h4>{data[i].title}</h4>
-                  <div>{data[i].content}</div>
-                  <div>{data[i].price}$</div>
-                </li>
+                <Item data={item} key={i}></Item>
               )
             })
           }
@@ -38,6 +33,17 @@ function App() {
       </div>
     </div>
   )
+}
+
+function Item(props){
+  return(
+    <li className='shop-item'>
+      <img src={props.data.imageUrl} alt='No Image'></img>
+      <h4>{props.data.title}</h4>
+      <div>{props.data.content}</div>
+      <div>{props.data.price}$</div>
+    </li>
+  );
 }
 
 export default App
