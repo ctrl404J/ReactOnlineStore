@@ -14,15 +14,14 @@ div {
   background-position: top;
 }
 
-.item-Container {
+.item-container {
   display: flex;
   justify-content: center;
   gap:4%;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .shop-item {
   list-style: none;
-  text-align: center;
-  border: solid;
+  text-align: left;
 }

@@ -4,6 +4,8 @@ import {Navbar, Container, Nav} from 'react-bootstrap';
 import data from './data.jsx';
 
 function App() {
+  let [itemData, setData] = useState(data);
+  let copy = [...itemData];
   
   return (
     <div className='App'>
@@ -19,12 +21,19 @@ function App() {
       </Navbar>
       <div className='main-bg'></div>
       <div>
-        <ul className='item-Container'>
-          <li className='shop-item'>
-            <img src='/c1.png' alt="상품 이미지"/>
-            <h4>상품명</h4>
-            <div>상품설명</div>
-          </li>
+        <ul className='item-container'>
+          {
+            copy.map(function(param, i){
+              return(
+                <li className='shop-item' key={i}>
+                  <img src={data[i].imageUrl} alt='No Image'></img>
+                  <h4>{data[i].title}</h4>
+                  <div>{data[i].content}</div>
+                  <div>{data[i].price}$</div>
+                </li>
+              )
+            })
+          }
         </ul>
       </div>
     </div>
