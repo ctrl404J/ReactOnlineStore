@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
-import {Navbar, Container, Nav} from 'react-bootstrap';
+import { Navbar, Container, Nav } from 'react-bootstrap';
 import data from './data.jsx';
-import {Routes, Route, Link} from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 
 function App() {
   let [itemData, setData] = useState(data);
@@ -20,24 +20,36 @@ function App() {
           </Nav>
         </Container>
       </Navbar>
-      <div className='main-bg'></div>
-      <div>
-        <ul className='item-container'>
-          {
-            copy.map(function(item, i){
-              return(
-                <Item data={item} key={i}></Item>
-              )
-            })
-          }
-        </ul>
-      </div>
+
+      <Routes>
+        <Route path='/' element={
+          <div>
+            <div className='main-bg'></div>
+            <div>
+              <ul className='item-container'>
+                {
+                  copy.map(function (item, i) {
+                    return (
+                      <Item data={item} key={i}></Item>
+                    )
+                  })
+                }
+              </ul>
+            </div>
+          </div>
+        } />
+        <Route path='/detail' element={<div>상세페이지</div>} />
+      </Routes>
+
+      <Link to='/'>홈 </Link>
+      <Link to='/detail'>상세페이지</Link>
+
     </div>
   )
 }
 
-function Item(props){
-  return(
+function Item(props) {
+  return (
     <li className='shop-item'>
       <img src={props.data.imageUrl} alt='No Image'></img>
       <h4>{props.data.title}</h4>
