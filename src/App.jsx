@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import {Navbar, Container, Nav} from 'react-bootstrap';
 import data from './data.jsx';
+import {Routes, Route, Link} from 'react-router-dom';
 
 function App() {
   let [itemData, setData] = useState(data);
